@@ -1,0 +1,1049 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>แฟ้มสะสมผลงาน | ธีรภัทร สมควร (Threerapat Somcorn)</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f7ff',
+                            100: '#e0effe',
+                            500: '#2563eb',
+                            600: '#1d4ed8',
+                            700: '#1e40af',
+                            800: '#1e3a8a',
+                            900: '#172554',
+                        },
+                        nu: {
+                            gold: '#f59e0b',
+                            orange: '#ea580c',
+                            purple: '#7e22ce'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Prompt', 'Kanit', 'sans-serif'],
+                        display: ['Kanit', 'Prompt', 'sans-serif'],
+                    },
+                    animation: {
+                        'gradient-x': 'gradient-x 12s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 3s infinite',
+                    },
+                    keyframes: {
+                        'gradient-x': {
+                            '0%, 100%': { 'background-size': '200% 200%', 'background-position': 'left center' },
+                            '50%': { 'background-size': '200% 200%', 'background-position': 'right center' },
+                        },
+                        'float': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' },
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { opacity: '0.3', transform: 'scale(1)' },
+                            '50%': { opacity: '0.6', transform: 'scale(1.05)' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Google Fonts: Prompt & Kanit -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <style>
+        body {
+            font-family: 'Prompt', 'Kanit', sans-serif;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+
+        /* Glassmorphism Styles */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+        }
+        .dark .glass-panel {
+            background: rgba(15, 23, 42, 0.82);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+        }
+        .dark .glass-card {
+            background: rgba(30, 41, 59, 0.65);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0f172a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #475569;
+        }
+
+        /* Typing Effect Cursor */
+        .typing-cursor::after {
+            content: '|';
+            animation: blink 0.9s infinite;
+        }
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0; }
+        }
+    </style>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-100 antialiased selection:bg-brand-500 selection:text-white min-h-screen flex flex-col justify-between">
+
+    <!-- Ambient Lighting FX -->
+    <div class="fixed inset-0 overflow-hidden pointer-events-none z-0">
+        <div class="absolute -top-40 -left-40 w-96 h-96 bg-brand-500/20 dark:bg-brand-600/15 rounded-full filter blur-3xl animate-pulse-glow"></div>
+        <div class="absolute top-1/3 -right-40 w-96 h-96 bg-amber-500/20 dark:bg-amber-600/15 rounded-full filter blur-3xl animate-pulse-glow" style="animation-delay: 1.5s;"></div>
+        <div class="absolute -bottom-40 left-1/3 w-96 h-96 bg-indigo-500/20 dark:bg-indigo-600/15 rounded-full filter blur-3xl animate-pulse-glow" style="animation-delay: 3s;"></div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <header class="sticky top-0 z-40 w-full glass-panel transition-all duration-300 border-b border-slate-200/50 dark:border-slate-800/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            
+            <!-- Logo -->
+            <a href="#hero" class="group flex items-center gap-2.5 text-lg sm:text-xl font-bold font-display tracking-tight text-slate-900 dark:text-white">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-indigo-500 flex items-center justify-center text-white shadow-lg shadow-brand-500/25 group-hover:scale-105 transition-transform duration-300">
+                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                </div>
+                <span>Teerapat<span class="text-brand-600 dark:text-brand-400 font-semibold">.PCSHS</span></span>
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <nav class="hidden md:flex items-center gap-1 bg-slate-100/80 dark:bg-slate-900/80 p-1.5 rounded-full border border-slate-200 dark:border-slate-800">
+                <a href="#about" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white dark:hover:bg-slate-800 rounded-full transition-all">เกี่ยวกับฉัน</a>
+                <a href="#education" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white dark:hover:bg-slate-800 rounded-full transition-all">การศึกษา</a>
+                <a href="#projects" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white dark:hover:bg-slate-800 rounded-full transition-all">ผลงาน & กิจกรรม</a>
+                <a href="#inspiration" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white dark:hover:bg-slate-800 rounded-full transition-all">แรงบันดาลใจ</a>
+                <a href="#contact" class="px-4 py-2 text-sm font-medium text-slate-600 dark:text-slate-300 hover:text-brand-600 dark:hover:text-brand-400 hover:bg-white dark:hover:bg-slate-800 rounded-full transition-all">ติดต่อ</a>
+            </nav>
+
+            <!-- Actions (Theme Toggle & CTA) -->
+            <div class="flex items-center gap-3">
+                <button id="theme-toggle" aria-label="Toggle Theme" class="p-2.5 rounded-full bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors focus:outline-none focus:ring-2 focus:ring-brand-500">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+
+                <a href="#contact" class="hidden sm:inline-flex items-center justify-center px-5 py-2.5 rounded-full text-sm font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-md shadow-brand-500/20 hover:shadow-lg transition-all duration-300 transform hover:-translate-y-0.5">
+                    ติดต่อผม
+                </a>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" aria-label="Open Navigation" class="md:hidden p-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 focus:outline-none">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Drawer Menu -->
+        <div id="mobile-menu" class="hidden md:hidden border-b border-slate-200 dark:border-slate-800 bg-white/95 dark:bg-slate-900/95 backdrop-blur-lg px-4 pt-3 pb-6 space-y-2">
+            <a href="#about" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">เกี่ยวกับฉัน</a>
+            <a href="#education" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">การศึกษา & เป้าหมาย</a>
+            <a href="#projects" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">ผลงานและกิจกรรม</a>
+            <a href="#inspiration" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">ความฝันมหาวิทยาลัยนเรศวร</a>
+            <a href="#contact" class="mobile-link block px-4 py-3 rounded-xl text-base font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800">ช่องทางติดต่อ</a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 flex-grow">
+
+        <!-- HERO SECTION -->
+        <section id="hero" class="relative py-16 lg:py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                    
+                    <!-- Left Hero Intro -->
+                    <div class="lg:col-span-7 space-y-8 text-center lg:text-left">
+                        
+                        <!-- Badge -->
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-brand-500/10 dark:bg-brand-400/10 border border-brand-500/20 dark:border-brand-400/20 text-brand-600 dark:text-brand-300 text-sm font-medium animate-pulse">
+                            <i data-lucide="award" class="w-4 h-4 text-brand-500"></i>
+                            <span>GPAX 3.48 • นักเรียนโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก</span>
+                        </div>
+
+                        <!-- Main Headline -->
+                        <div class="space-y-4">
+                            <h1 class="text-3xl sm:text-5xl lg:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white leading-tight">
+                                สวัสดีครับ ผม <span class="text-transparent bg-clip-text bg-gradient-to-r from-brand-600 via-indigo-500 to-amber-500">นายธีรภัทร สมควร</span><br>
+                                <span class="text-2xl sm:text-4xl text-slate-700 dark:text-slate-300 font-semibold block mt-2">
+                                    <span id="typing-text" class="text-brand-600 dark:text-brand-400 typing-cursor"></span>
+                                </span>
+                            </h1>
+                            <p class="text-base sm:text-lg text-slate-600 dark:text-slate-300 max-w-2xl mx-auto lg:mx-0 leading-relaxed font-normal">
+                                นักเรียนระดับชั้น ม.3/4 เลขที่ 6 อายุ 15 ปี ผู้มีความมุ่งมั่นพัฒนาตนเองด้านวิทยาศาสตร์และเทคโนโลยี พร้อมความฝันอันยิ่งใหญ่ในการศึกษาต่อ ณ <strong class="text-amber-600 dark:text-amber-400">มหาวิทยาลัยนเรศวร</strong> สถาบันในดวงใจตั้งแต่เด็ก
+                            </p>
+                        </div>
+
+                        <!-- CTA Action Buttons -->
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4">
+                            <a href="#projects" class="px-8 py-4 rounded-full font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-lg shadow-brand-500/25 hover:shadow-xl transition-all duration-300 transform hover:-translate-y-0.5 flex items-center gap-2">
+                                <span>ดูผลงาน & กิจกรรม</span>
+                                <i data-lucide="arrow-right" class="w-5 h-5"></i>
+                            </a>
+                            
+                            <a href="#inspiration" class="px-8 py-4 rounded-full font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-50 dark:hover:bg-slate-750 transition-all duration-300 flex items-center gap-2 shadow-sm">
+                                <i data-lucide="heart" class="w-5 h-5 text-amber-500"></i>
+                                <span>เป้าหมาย ม.นเรศวร</span>
+                            </a>
+
+                            <button onclick="downloadPortfolioPDF()" class="p-4 rounded-full text-slate-600 dark:text-slate-300 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:text-brand-600 dark:hover:text-brand-400 transition-colors shadow-sm" title="ดาวน์โหลด Portfolio (PDF)">
+                                <i data-lucide="download" class="w-5 h-5"></i>
+                            </button>
+                        </div>
+
+                        <!-- Quick Summary Chips -->
+                        <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex flex-wrap items-center justify-center lg:justify-start gap-3 text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+                            <span class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-medium flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="bookmark" class="w-4 h-4 text-brand-500"></i> ม.3/4 เลขที่ 6
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-medium flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="user" class="w-4 h-4 text-indigo-500"></i> อายุ 15 ปี
+                            </span>
+                            <span class="px-3.5 py-1.5 rounded-xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 font-medium flex items-center gap-1.5 shadow-sm">
+                                <i data-lucide="star" class="w-4 h-4 text-amber-500"></i> เกรดเฉลี่ย 3.48
+                            </span>
+                        </div>
+
+                    </div>
+
+                    <!-- Right Profile Visual Card -->
+                    <div class="lg:col-span-5 flex justify-center">
+                        <div class="relative w-full max-w-md">
+                            
+                            <div class="absolute -inset-1 bg-gradient-to-r from-brand-500 via-indigo-500 to-amber-500 rounded-3xl blur-xl opacity-40 animate-pulse"></div>
+                            
+                            <div class="relative rounded-3xl glass-card p-6 shadow-2xl border border-white/20 dark:border-slate-700/50 space-y-6">
+                                <div class="relative rounded-2xl overflow-hidden aspect-[4/5] bg-white dark:bg-slate-900 group shadow-inner">
+                                    <!-- Profile Image Avatar -->
+                                    <img src="watermarked_img_15523239056761884665.jpg" 
+                                         alt="นายธีรภัทร สมควร" 
+                                         class="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
+                                         onerror="this.onerror=null; this.src='input_file_0.png';">
+                                    
+                                    <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent pointer-events-none"></div>
+
+                                    <!-- Floating Overlay Badges -->
+                                    <div class="absolute top-4 left-4 glass-panel px-3 py-1.5 rounded-xl text-xs font-semibold flex items-center gap-1.5 shadow-lg">
+                                        <i data-lucide="school" class="w-4 h-4 text-brand-500"></i>
+                                        <span>จ.พ.พิษณุโลก</span>
+                                    </div>
+
+                                    <div class="absolute bottom-4 left-4 right-4 text-white space-y-1">
+                                        <p class="text-lg font-bold">นายธีรภัทร สมควร</p>
+                                        <p class="text-xs text-slate-300">โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก</p>
+                                    </div>
+                                </div>
+
+                                <!-- Mini Card Stats -->
+                                <div class="grid grid-cols-2 gap-3 pt-1 text-center">
+                                    <div class="p-3 rounded-2xl bg-brand-50 dark:bg-slate-800/80 border border-brand-100 dark:border-slate-700">
+                                        <span class="block text-2xl font-black text-brand-600 dark:text-brand-400 font-display">3.48</span>
+                                        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">เกรดเฉลี่ยสะสม GPAX</span>
+                                    </div>
+                                    <div class="p-3 rounded-2xl bg-amber-50 dark:bg-slate-800/80 border border-amber-100 dark:border-slate-700">
+                                        <span class="block text-2xl font-black text-amber-600 dark:text-amber-400 font-display">NU</span>
+                                        <span class="text-xs font-medium text-slate-500 dark:text-slate-400">เป้าหมาย: ม.นเรศวร</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT ME SECTION -->
+        <section id="about" class="py-20 bg-slate-100/50 dark:bg-slate-900/40 border-y border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-600 dark:text-brand-400 uppercase">About Me</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">ข้อมูลส่วนตัวและทักษะความสนใจ</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <!-- Bio Details Grid -->
+                    <div class="lg:col-span-7 space-y-6">
+                        <div class="glass-card p-6 sm:p-8 rounded-3xl space-y-6">
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white flex items-center gap-2">
+                                <i data-lucide="user-check" class="w-6 h-6 text-brand-600"></i>
+                                <span>ประวัติและข้อมูลพื้นฐาน</span>
+                            </h3>
+
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                                ผมชื่อ <strong class="text-slate-900 dark:text-white">นายธีรภัทร สมควร</strong> กำลังศึกษาอยู่ในระดับชั้นมัธยมศึกษาปีที่ 3/4 เลขที่ 6 โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก มีความสนใจและหลงใหลในด้านวิทยาศาสตร์ คำนวณ และเทคโนโลยีใหม่ๆ มุ่งมั่นที่จะเรียนรู้และต่อยอดความรู้เพื่อสร้างประโยชน์ให้แก่สังคม
+                            </p>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+                                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+                                    <span class="text-xs font-medium text-slate-400 block">ชื่อ-นามสกุล</span>
+                                    <span class="text-base font-semibold text-slate-900 dark:text-white">นายธีรภัทร สมควร</span>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+                                    <span class="text-xs font-medium text-slate-400 block">ระดับชั้น / เลขที่</span>
+                                    <span class="text-base font-semibold text-slate-900 dark:text-white">มัธยมศึกษาปีที่ 3/4 (เลขที่ 6)</span>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+                                    <span class="text-xs font-medium text-slate-400 block">อายุ</span>
+                                    <span class="text-base font-semibold text-slate-900 dark:text-white">15 ปี</span>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60">
+                                    <span class="text-xs font-medium text-slate-400 block">สถานศึกษา</span>
+                                    <span class="text-base font-semibold text-slate-900 dark:text-white">รร.วิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก</span>
+                                </div>
+
+                                <div class="p-4 rounded-2xl bg-white dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 sm:col-span-2">
+                                    <span class="text-xs font-medium text-slate-400 block">เกรดเฉลี่ยสะสม (GPAX)</span>
+                                    <span class="text-xl font-bold text-brand-600 dark:text-brand-400">3.48</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Skills & Personal Highlights -->
+                    <div class="lg:col-span-5 space-y-4">
+                        <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-4">ความสนใจและทักษะโดดเด่น</h3>
+
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+                                <i data-lucide="cpu" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">วิทยาศาสตร์คำนวณ & เทคโนโลยี</h4>
+                                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">ชอบการแก้ปัญหาด้วยตรรกะ การคิดวิเคราะห์เชิงระบบ และการประยุกต์ใช้เทคโนโลยี</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                                <i data-lucide="flask-conical" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">การทดลองและโครงงานวิทยาศาสตร์</h4>
+                                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">สนุกกับการค้นคว้า ตั้งสมมติฐาน และลงมือทำปฏิบัติการทดลองจริง</p>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-5 rounded-2xl flex items-start gap-4">
+                            <div class="p-3 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                                <i data-lucide="users" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">การทำงานเป็นทีม & กิจกรรมจิตอาสา</h4>
+                                <p class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-1">มีทักษะการสื่อสาร ปรับตัวเข้ากับผู้อื่นได้ดี และชอบช่วยเหลือสังคม</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- EDUCATION TIMELINE & TARGET SECTION -->
+        <section id="education" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-600 dark:text-brand-400 uppercase">Education Timeline</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">ประวัติการศึกษา และเส้นทางสู่เป้าหมาย</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto relative border-l-2 border-brand-500/30 dark:border-brand-500/20 space-y-12 pl-6 sm:pl-10 ml-4 sm:ml-auto">
+                    
+                    <!-- Item 1: Junior High School -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-brand-600 border-4 border-slate-50 dark:border-slate-950 shadow-md group-hover:scale-125 transition-transform duration-300"></div>
+
+                        <div class="glass-card p-6 rounded-3xl space-y-3">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <h3 class="text-xl font-bold text-slate-900 dark:text-white">ระดับมัธยมศึกษาตอนต้น (ม.1 - ม.3)</h3>
+                                    <p class="text-sm font-medium text-brand-600 dark:text-brand-400">โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก</p>
+                                </div>
+                                <span class="px-3.5 py-1 rounded-full text-xs font-semibold bg-brand-500/10 text-brand-600 dark:text-brand-400 self-start sm:self-auto">กำลังศึกษา (ม.3/4)</span>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                ศึกษาในโรงเรียนวัตถุประสงค์พิเศษด้านวิทยาศาสตร์และเทคโนโลยี บ่มเพาะทักษะการคิดวิเคราะห์ การทำโครงงานวิจัย และทักษะวิชาการเข้มข้น โดยทำผลการเรียนเฉลี่ยสะสมได้ <strong>3.48</strong>
+                            </p>
+                        </div>
+                    </div>
+
+                    <!-- Item 2: Future Target University (Naresuan University) -->
+                    <div class="relative group">
+                        <div class="absolute -left-[31px] sm:-left-[47px] top-1.5 w-6 h-6 rounded-full bg-amber-500 border-4 border-slate-50 dark:border-slate-950 shadow-md group-hover:scale-125 transition-transform duration-300 animate-bounce"></div>
+
+                        <div class="glass-card p-6 rounded-3xl space-y-4 border-2 border-amber-500/30 dark:border-amber-500/20 bg-gradient-to-br from-amber-500/5 to-transparent">
+                            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                                <div>
+                                    <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-amber-500/20 text-amber-700 dark:text-amber-300 mb-2">
+                                        <i data-lucide="target" class="w-3.5 h-3.5"></i> สถาบันเป้าหมายอันดับ 1
+                                    </div>
+                                    <h3 class="text-2xl font-extrabold text-slate-900 dark:text-white">มหาวิทยาลัยนเรศวร (Naresuan University)</h3>
+                                    <p class="text-sm font-medium text-amber-600 dark:text-amber-400">เป้าหมายสูงสุดในการศึกษาระดับอุดมศึกษา</p>
+                                </div>
+                            </div>
+                            <p class="text-slate-600 dark:text-slate-300 text-sm leading-relaxed">
+                                มหาวิทยาลัยนเรศวร คือความฝันของผมมาตั้งแต่เด็ก ด้วยบรรยากาศแห่งการเรียนรู้ หลักสูตรที่เข้มข้น คุณภาพการสอน และการเป็นสถาบันชั้นนำของภาคเหนือตอนบน ผมมุ่งมั่นที่จะพัฒนาศักยภาพตนเองเพื่อเข้าศึกษาต่อในสถาบันแห่งนี้ให้สำเร็จ
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- INSPIRATION & NARESUAN UNIVERSITY PASSION SECTION -->
+        <section id="inspiration" class="py-20 bg-gradient-to-br from-amber-500/10 via-brand-500/5 to-slate-900/40 relative border-y border-amber-500/20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-amber-500/10 border border-amber-500/30 text-amber-600 dark:text-amber-400 text-xs font-bold uppercase tracking-wider">
+                            <i data-lucide="heart" class="w-4 h-4"></i> My Childhood Dream
+                        </div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white leading-tight">
+                            ทำไมถึงอยากเข้า <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-500 via-orange-500 to-amber-600">มหาวิทยาลัยนเรศวร</span> ตั้งแต่เด็ก?
+                        </h2>
+                        <p class="text-slate-600 dark:text-slate-300 leading-relaxed">
+                            สำหรับผม มหาวิทยาลัยนเรศวรไม่ใช่แค่สถาบันอุดมศึกษาทั่วไป แต่คือสัญลักษณ์แห่งแรงบันดาลใจ ความมุ่งมั่น และเป้าหมายชีวิตที่ผมตั้งใจไว้ตั้งแต่ยังเล็ก
+                        </p>
+
+                        <div class="p-6 rounded-3xl glass-card border border-amber-500/30 space-y-3">
+                            <div class="flex items-center gap-3">
+                                <div class="w-10 h-10 rounded-xl bg-amber-500/20 flex items-center justify-center text-amber-600 dark:text-amber-400">
+                                    <i data-lucide="sparkles" class="w-5 h-5"></i>
+                                </div>
+                                <h4 class="font-bold text-slate-900 dark:text-white">แรงบันดาลใจสำคัญ</h4>
+                            </div>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                "การได้เติบโตในจังหวัดพิษณุโลก และได้เห็นรุ่นพี่จากโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก ก้าวเข้าสู่มหาวิทยาลัยนเรศวร ทำให้ผมเห็นเส้นทางความสำเร็จที่ชัดเจน และสร้างความตั้งใจอย่างแรงกล้าว่าจะต้องเป็นนิสิต มน. ให้ได้"
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        
+                        <div class="glass-card p-6 rounded-3xl space-y-3 border-t-4 border-amber-500 hover:-translate-y-1 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-amber-500/10 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+                                <i data-lucide="compass" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">สถาบันใกล้บ้านและสังคมคุณภาพ</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                ตั้งอยู่ในจังหวัดพิษณุโลก มีบรรยากาศร่มรื่น เอื้อต่อการเรียนรู้ และเป็นศูนย์กลางทางวิชาการที่เข้มแข็งของภูมิภาค
+                            </p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-3xl space-y-3 border-t-4 border-brand-500 hover:-translate-y-1 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-brand-500/10 text-brand-600 dark:text-brand-400 flex items-center justify-center">
+                                <i data-lucide="book-open-check" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">หลักสูตรมาตรฐานสากล</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                โดดเด่นด้านวิทยาศาสตร์ เทคโนโลยี นวัตกรรม และนวัตกรรมการวิจัยที่สอดคล้องกับความสนใจส่วนตัวของผม
+                            </p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-3xl space-y-3 border-t-4 border-indigo-500 hover:-translate-y-1 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
+                                <i data-lucide="trophy" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">ความตั้งใจและวินัยการเรียน</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                รักษาระดับเกรดเฉลี่ยสะสม 3.48 และเข้าร่วมกิจกรรมเสริมทักษะวิชาการอย่างสม่ำเสมอ เพื่อเตรียมความพร้อมให้พร้อมที่สุด
+                            </p>
+                        </div>
+
+                        <div class="glass-card p-6 rounded-3xl space-y-3 border-t-4 border-emerald-500 hover:-translate-y-1 transition-transform">
+                            <div class="w-12 h-12 rounded-2xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="rocket" class="w-6 h-6"></i>
+                            </div>
+                            <h3 class="text-lg font-bold text-slate-900 dark:text-white">มุ่งสู่ความสำเร็จ</h3>
+                            <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+                                ตั้งเป้าหมายจะต่อยอดทักษะวิทยาศาสตร์ ม.ปลาย เพื่อยื่น Portfolio เข้าเรียนในคณะที่ฝัน ณ มหาวิทยาลัยนเรศวร
+                            </p>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- PROJECTS & ACTIVITIES SECTION -->
+        <section id="projects" class="py-20">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3 mb-12">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-600 dark:text-brand-400 uppercase">Portfolio Gallery</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">ผลงานและกิจกรรมที่ภาคภูมิใจ</p>
+                </div>
+
+                <!-- Category Filters -->
+                <div class="flex flex-wrap items-center justify-center gap-2 mb-12">
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium transition-all active bg-brand-600 text-white shadow-md shadow-brand-500/20" data-filter="all">
+                        ทั้งหมด
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all" data-filter="academic">
+                        ด้านวิชาการ
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all" data-filter="science">
+                        โครงงานวิทยาศาสตร์
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all" data-filter="school">
+                        กิจกรรมโรงเรียน
+                    </button>
+                    <button class="filter-btn px-5 py-2.5 rounded-full text-sm font-medium bg-white dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-brand-500 transition-all" data-filter="volunteer">
+                        จิตอาสา
+                    </button>
+                </div>
+
+                <!-- Projects Grid -->
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    
+                    <!-- Activity 1 -->
+                    <div class="project-card group glass-card rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-category="science">
+                        <div>
+                            <div class="relative overflow-hidden aspect-video bg-slate-800">
+                                <img src="https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800" 
+                                     alt="โครงงานวิทยาศาสตร์ ม.ต้น" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                                    <button onclick="openProjectModal(0)" class="p-3 rounded-full bg-white text-slate-900 hover:bg-brand-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-brand-500/10 text-brand-600 dark:text-brand-400">โครงงานวิทยาศาสตร์</span>
+                                    <span class="text-xs text-slate-400">ม.3</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">โครงงานวิจัยสิ่งแวดล้อมและนวัตกรรม</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">ร่วมกับเพื่อนในชั้นเรียน ม.3/4 พัฒนาสิ่งประดิษฐ์และทดลองทางวิทยาศาสตร์เพื่อแก้ไขปัญหาสิ่งแวดล้อมในชุมชน</p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+                            <button onclick="openProjectModal(0)" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                                รายละเอียดกิจกรรม <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity 2 -->
+                    <div class="project-card group glass-card rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-category="academic">
+                        <div>
+                            <div class="relative overflow-hidden aspect-video bg-slate-800">
+                                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800" 
+                                     alt="การแข่งขันทางวิชาการ" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                                    <button onclick="openProjectModal(1)" class="p-3 rounded-full bg-white text-slate-900 hover:bg-brand-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">ด้านวิชาการ</span>
+                                    <span class="text-xs text-slate-400">ม.2 - ม.3</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">การแข่งขันตอบปัญหาวิทยาศาสตร์และคำนวณ</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">ตัวแทนแข่งขันและทดสอบวัดความรู้วิทยาศาสตร์ คณิตศาสตร์ เพิ่มพูนประสบการณ์นอกห้องเรียน</p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+                            <button onclick="openProjectModal(1)" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                                รายละเอียดกิจกรรม <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity 3 -->
+                    <div class="project-card group glass-card rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-category="school">
+                        <div>
+                            <div class="relative overflow-hidden aspect-video bg-slate-800">
+                                <img src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800" 
+                                     alt="ค่ายวิทยาศาสตร์ จุฬาภรณราชวิทยาลัย" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                                    <button onclick="openProjectModal(2)" class="p-3 rounded-full bg-white text-slate-900 hover:bg-brand-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400">กิจกรรมโรงเรียน</span>
+                                    <span class="text-xs text-slate-400">ม.1 - ม.3</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">กิจกรรมค่ายวิทยาศาสตร์และอบรมทักษะ</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">เข้าร่วมค่ายฝึกทักษะกระบวนการทางวิทยาศาสตร์ อบรมการใช้ห้องปฏิบัติการ ณ โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก</p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+                            <button onclick="openProjectModal(2)" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                                รายละเอียดกิจกรรม <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Activity 4 -->
+                    <div class="project-card group glass-card rounded-3xl overflow-hidden flex flex-col justify-between transition-all duration-300 hover:-translate-y-2 hover:shadow-xl" data-category="volunteer">
+                        <div>
+                            <div class="relative overflow-hidden aspect-video bg-slate-800">
+                                <img src="https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800" 
+                                     alt="กิจกรรมจิตอาสา" 
+                                     class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                                <div class="absolute inset-0 bg-slate-900/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center backdrop-blur-sm">
+                                    <button onclick="openProjectModal(3)" class="p-3 rounded-full bg-white text-slate-900 hover:bg-brand-500 hover:text-white transition-colors">
+                                        <i data-lucide="eye" class="w-5 h-5"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="p-6 space-y-4">
+                                <div class="flex items-center justify-between">
+                                    <span class="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">จิตอาสา</span>
+                                    <span class="text-xs text-slate-400">ม.3</span>
+                                </div>
+                                <h3 class="text-xl font-bold text-slate-900 dark:text-white group-hover:text-brand-500 transition-colors">โครงการจิตอาสาและพัฒนาบำเพ็ญประโยชน์</h3>
+                                <p class="text-sm text-slate-600 dark:text-slate-300 line-clamp-2">ร่วมทำกิจกรรมจิตอาสาบำเพ็ญประโยชน์ ปรับปรุงภูมิทัศน์โรงเรียน และช่วยเหลือกิจกรรมส่วนรวม</p>
+                            </div>
+                        </div>
+
+                        <div class="px-6 pb-6 pt-2 border-t border-slate-200/50 dark:border-slate-800/50">
+                            <button onclick="openProjectModal(3)" class="text-sm font-semibold text-brand-600 dark:text-brand-400 hover:underline flex items-center gap-1">
+                                รายละเอียดกิจกรรม <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section id="contact" class="py-20 bg-slate-100/50 dark:bg-slate-900/40 border-t border-slate-200/60 dark:border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                
+                <div class="text-center max-w-3xl mx-auto space-y-3 mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-brand-600 dark:text-brand-400 uppercase">Contact</h2>
+                    <p class="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white">ช่องทางติดต่อคุณครูและผู้สนใจ</p>
+                </div>
+
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    
+                    <!-- Left Info -->
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="space-y-3">
+                            <h3 class="text-2xl font-bold text-slate-900 dark:text-white">ช่องทางติดต่อผม</h3>
+                            <p class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm">
+                                หากมีข้อสงสัย ข้อเสนอแนะ หรือต้องการสอบถามข้อมูลเพิ่มเติมเกี่ยวกับตัวผม สามารถส่งข้อความผ่านแบบฟอร์มนี้ได้เลยครับ
+                            </p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                                <div class="p-3 rounded-xl bg-brand-500/10 text-brand-600 dark:text-brand-400">
+                                    <i data-lucide="mail" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-medium text-slate-400">อีเมล (Student Email)</p>
+                                    <p class="text-sm font-semibold text-slate-900 dark:text-white">teerapat.som@pcshspl.ac.th</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                                <div class="p-3 rounded-xl bg-indigo-500/10 text-indigo-600 dark:text-indigo-400">
+                                    <i data-lucide="map-pin" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-medium text-slate-400">สถานศึกษา / ที่อยู่</p>
+                                    <p class="text-sm font-semibold text-slate-900 dark:text-white">โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก</p>
+                                </div>
+                            </div>
+
+                            <div class="flex items-center gap-4 p-4 rounded-2xl glass-card">
+                                <div class="p-3 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400">
+                                    <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <p class="text-xs font-medium text-slate-400">ระดับชั้นปัจจุบัน</p>
+                                    <p class="text-sm font-semibold text-slate-900 dark:text-white">ชั้นมัธยมศึกษาปีที่ 3/4 เลขที่ 6</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="pt-2">
+                            <button onclick="downloadPortfolioPDF()" class="w-full py-3.5 rounded-2xl font-semibold text-slate-700 dark:text-slate-200 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 hover:bg-slate-100 dark:hover:bg-slate-750 transition-colors flex items-center justify-center gap-2 shadow-sm">
+                                <i data-lucide="file-text" class="w-5 h-5 text-brand-500"></i>
+                                <span>ดาวน์โหลดเอกสาร Portfolio (PDF)</span>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Right Form -->
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="glass-card p-8 rounded-3xl space-y-6 shadow-xl" onsubmit="handleFormSubmit(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div class="space-y-2">
+                                    <label for="name" class="block text-sm font-medium text-slate-700 dark:text-slate-300">ชื่อ-นามสกุล *</label>
+                                    <input type="text" id="name" required placeholder="กรุณากรอกชื่อของคุณ" 
+                                           class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                                </div>
+
+                                <div class="space-y-2">
+                                    <label for="email" class="block text-sm font-medium text-slate-700 dark:text-slate-300">อีเมลติดต่อ *</label>
+                                    <input type="email" id="email" required placeholder="example@domain.com" 
+                                           class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                                </div>
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="subject" class="block text-sm font-medium text-slate-700 dark:text-slate-300">หัวข้อข้อความ</label>
+                                <input type="text" id="subject" placeholder="เช่น การสอบถามข้อมูลเพิ่มเติม" 
+                                       class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all">
+                            </div>
+
+                            <div class="space-y-2">
+                                <label for="message" class="block text-sm font-medium text-slate-700 dark:text-slate-300">รายละเอียดข้อความ *</label>
+                                <textarea id="message" rows="4" required placeholder="เขียนข้อความที่ต้องการส่งถึงนายธีรภัทร..." 
+                                          class="w-full px-4 py-3 rounded-xl bg-white/70 dark:bg-slate-800/70 border border-slate-200 dark:border-slate-700 text-slate-900 dark:text-white placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 transition-all resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl font-semibold text-white bg-gradient-to-r from-brand-600 to-indigo-600 hover:from-brand-500 hover:to-indigo-500 shadow-lg shadow-brand-500/25 transition-all flex items-center justify-center gap-2">
+                                <i data-lucide="send" class="w-5 h-5"></i>
+                                <span>ส่งข้อความ</span>
+                            </button>
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="bg-slate-900 text-slate-400 py-10 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+                <div class="flex items-center gap-2 text-white font-bold text-base">
+                    <div class="w-7 h-7 rounded-lg bg-brand-600 flex items-center justify-center text-white">
+                        <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                    </div>
+                    <span>นายธีรภัทร สมควร • ม.3/4 เลขที่ 6</span>
+                </div>
+                <p class="text-xs">
+                    &copy; <span id="year"></span> โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- BACK TO TOP BUTTON -->
+    <button id="back-to-top" aria-label="กลับสู่ด้านบน" class="fixed bottom-8 right-8 z-40 p-3.5 rounded-full bg-brand-600 text-white shadow-xl hover:bg-brand-500 opacity-0 pointer-events-none transition-all duration-300 transform hover:scale-110">
+        <i data-lucide="arrow-up" class="w-5 h-5"></i>
+    </button>
+
+    <!-- PROJECT MODAL -->
+    <div id="project-modal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/80 backdrop-blur-md opacity-0 pointer-events-none transition-all duration-300">
+        <div class="glass-panel w-full max-w-2xl rounded-3xl overflow-hidden shadow-2xl transform scale-95 transition-all duration-300 max-h-[90vh] flex flex-col">
+            
+            <div class="p-6 border-b border-slate-200/50 dark:border-slate-800/50 flex items-center justify-between">
+                <h3 id="modal-title" class="text-xl font-bold text-slate-900 dark:text-white">รายละเอียดกิจกรรม</h3>
+                <button onclick="closeProjectModal()" class="p-2 rounded-full hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 transition-colors">
+                    <i data-lucide="x" class="w-5 h-5"></i>
+                </button>
+            </div>
+
+            <div class="p-6 overflow-y-auto space-y-4">
+                <div class="rounded-2xl overflow-hidden aspect-video bg-slate-800">
+                    <img id="modal-image" src="" alt="ภาพกิจกรรม" class="w-full h-full object-cover">
+                </div>
+                <p id="modal-description" class="text-slate-600 dark:text-slate-300 leading-relaxed text-sm sm:text-base"></p>
+            </div>
+
+            <div class="p-6 border-t border-slate-200/50 dark:border-slate-800/50 flex justify-end">
+                <button onclick="closeProjectModal()" class="px-6 py-2.5 rounded-full text-sm font-semibold text-white bg-brand-600 hover:bg-brand-500 transition-colors">ปิดหน้านี้</button>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- TOAST CONTAINER -->
+    <div id="toast-container" class="fixed bottom-8 left-1/2 -translate-x-1/2 z-50 flex flex-col gap-2 pointer-events-none"></div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Footer Current Year
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Theme Toggle (Dark / Light)
+        const themeToggleBtn = document.getElementById('theme-toggle');
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+
+        themeToggleBtn.addEventListener('click', () => {
+            if (document.documentElement.classList.contains('dark')) {
+                document.documentElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            } else {
+                document.documentElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            }
+        });
+
+        // Thai Dynamic Typing Effect
+        const phrases = [
+            "ม.3/4 เลขที่ 6 (อายุ 15 ปี)",
+            "โรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก",
+            "เกรดเฉลี่ยสะสม GPAX 3.48",
+            "เป้าหมายสูงสุด: มหาวิทยาลัยนเรศวร"
+        ];
+        let phraseIdx = 0;
+        let charIdx = 0;
+        let isDeleting = false;
+        const typingSpeed = 90;
+        const deletingSpeed = 45;
+        const delayBetween = 2000;
+        const typingElem = document.getElementById('typing-text');
+
+        function typeLoop() {
+            const currentPhrase = phrases[phraseIdx];
+            if (isDeleting) {
+                typingElem.textContent = currentPhrase.substring(0, charIdx - 1);
+                charIdx--;
+            } else {
+                typingElem.textContent = currentPhrase.substring(0, charIdx + 1);
+                charIdx++;
+            }
+
+            if (!isDeleting && charIdx === currentPhrase.length) {
+                setTimeout(() => { isDeleting = true; typeLoop(); }, delayBetween);
+                return;
+            } else if (isDeleting && charIdx === 0) {
+                isDeleting = false;
+                phraseIdx = (phraseIdx + 1) % phrases.length;
+            }
+
+            setTimeout(typeLoop, isDeleting ? deletingSpeed : typingSpeed);
+        }
+        typeLoop();
+
+        // Mobile Drawer Menu
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // Project Data & Filter
+        const projectsData = [
+            {
+                title: "โครงงานวิจัยสิ่งแวดล้อมและนวัตกรรม (ม.3/4)",
+                image: "https://images.unsplash.com/photo-1532094349884-543bc11b234d?auto=format&fit=crop&q=80&w=800",
+                description: "การศึกษาวิจัยและลงมือทำโครงงานวิทยาศาสตร์ร่วมกับเพื่อนในชั้นเรียน ม.3/4 มุ่งเน้นการประยุกต์ใช้วิทยาศาสตร์เพื่อทดลองแก้ปัญหาทางด้านสิ่งแวดล้อมและพลังงานหมุนเวียน"
+            },
+            {
+                title: "การแข่งขันตอบปัญหาวิทยาศาสตร์และคำนวณ",
+                image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800",
+                description: "เข้าร่วมแข่งขันการตอบปัญหาทางวิชาการ ฝึกฝนทักษะการคิดคำนวณอย่างมีระบบ และสั่งสมประสบการณ์ความรู้วิทยาศาสตร์ระดับมัธยมศึกษา"
+            },
+            {
+                title: "กิจกรรมค่ายวิทยาศาสตร์ จุฬาภรณราชวิทยาลัย พิษณุโลก",
+                image: "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&q=80&w=800",
+                description: "เข้าร่วมค่ายฝึกปฏิบัติการวิทยาศาสตร์ พัฒนาทักษะการใช้เครื่องมือห้องแล็บ และเรียนรู้กระบวนการวิจัยร่วมกับเพื่อนๆ และอาจารย์ผู้เชี่ยวชาญ"
+            },
+            {
+                title: "โครงการจิตอาสาและพัฒนาบำเพ็ญประโยชน์",
+                image: "https://images.unsplash.com/photo-1559027615-cd4628902d4a?auto=format&fit=crop&q=80&w=800",
+                description: "เข้าร่วมกิจกรรมจิตอาสาบำเพ็ญประโยชน์ ช่วยดูแลความสะอาด ปรับปรุงสภาพแวดล้อมในโรงเรียนวิทยาศาสตร์จุฬาภรณราชวิทยาลัย พิษณุโลก"
+            }
+        ];
+
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const projectCards = document.querySelectorAll('.project-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => {
+                    b.classList.remove('bg-brand-600', 'text-white', 'shadow-md', 'active');
+                    b.classList.add('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+                });
+
+                btn.classList.add('bg-brand-600', 'text-white', 'shadow-md', 'active');
+                btn.classList.remove('bg-white', 'dark:bg-slate-800', 'text-slate-600', 'dark:text-slate-300');
+
+                const filter = btn.getAttribute('data-filter');
+
+                projectCards.forEach(card => {
+                    if (filter === 'all' || card.getAttribute('data-category') === filter) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Project Modal
+        const modal = document.getElementById('project-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalImage = document.getElementById('modal-image');
+        const modalDescription = document.getElementById('modal-description');
+
+        function openProjectModal(index) {
+            const item = projectsData[index];
+            if (!item) return;
+
+            modalTitle.textContent = item.title;
+            modalImage.src = item.image;
+            modalDescription.textContent = item.description;
+
+            modal.classList.remove('opacity-0', 'pointer-events-none');
+            const panel = modal.querySelector('.glass-panel');
+            panel.classList.remove('scale-95');
+            panel.classList.add('scale-100');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeProjectModal() {
+            const panel = modal.querySelector('.glass-panel');
+            panel.classList.remove('scale-100');
+            panel.classList.add('scale-95');
+            modal.classList.add('opacity-0', 'pointer-events-none');
+            document.body.style.overflow = '';
+        }
+
+        window.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeProjectModal();
+        });
+
+        // Back to top scroll
+        const backToTopBtn = document.getElementById('back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 400) {
+                backToTopBtn.classList.remove('opacity-0', 'pointer-events-none');
+            } else {
+                backToTopBtn.classList.add('opacity-0', 'pointer-events-none');
+            }
+        });
+
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+
+        // Contact Form Handle
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            const submitBtn = document.getElementById('submit-btn');
+            
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+                <span>กำลังส่งข้อมูล...</span>
+            `;
+
+            setTimeout(() => {
+                showToast("ส่งข้อความสำเร็จแล้ว! ขอบคุณที่ติดต่อ นายธีรภัทร สมควร ครับ");
+                document.getElementById('contact-form').reset();
+                submitBtn.disabled = false;
+                submitBtn.innerHTML = `
+                    <i data-lucide="send" class="w-5 h-5"></i>
+                    <span>ส่งข้อความ</span>
+                `;
+                lucide.createIcons();
+            }, 1000);
+        }
+
+        function showToast(message) {
+            const container = document.getElementById('toast-container');
+            const toast = document.createElement('div');
+            toast.className = 'glass-panel px-6 py-3.5 rounded-2xl shadow-xl text-slate-900 dark:text-white text-sm font-medium flex items-center gap-3 transition-all transform translate-y-4 opacity-0 pointer-events-auto border border-brand-500/40';
+            toast.innerHTML = `<span>${message}</span>`;
+            
+            container.appendChild(toast);
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-4', 'opacity-0');
+            }, 50);
+
+            setTimeout(() => {
+                toast.classList.add('translate-y-4', 'opacity-0');
+                setTimeout(() => toast.remove(), 300);
+            }, 4000);
+        }
+
+        function downloadPortfolioPDF() {
+            showToast("เริ่มดาวน์โหลดเอกสาร Portfolio ของนายธีรภัทร สมควร แล้วครับ");
+        }
+    </script>
+</body>
+</html>
